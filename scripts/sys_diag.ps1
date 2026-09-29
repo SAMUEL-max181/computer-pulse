@@ -1,3 +1,4 @@
+
 # ====================================================
 # COMPUTER PULSE - SYSTEM DIAGNOSTIC AGENT (POWERSHELL)
 # ====================================================
@@ -30,9 +31,3 @@ Total Memory : $totalRamMB MB
 Free Memory : $freeRamMB MB
 ====================================================
 "@
-# STORAGE: Ensure data folder exists and write log file
-if (-not (Test-Path -Path "data")) {
- New-Item -ItemType Directory -Path "data" | Out-Null
-}
-$logContent | Out-File -FilePath $LogFile -Encoding utf8
-Write-Host "[SUCCESS] Diagnostic log saved to $LogFile" -ForegroundColor Green
